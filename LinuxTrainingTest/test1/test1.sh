@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#阶乘函数
 factorial()
 {
   #声明内部变量 n
@@ -12,17 +12,30 @@ factorial()
     #通过reslut这个全局变量传参
     reslut=`expr $n \* $reslut`
     echo "$1!=$reslut"
-    return $reslut
   elif test $[n] -eq 0
   then
     reslut=1
     echo "$1!=1"
-    return $reslut;
-  #小于0
-  else
-    echo "请输入非负数!"
-    return 0
   fi
+  return $reslut;
+}
+#USAGE
+usage()
+{
+  echo "USAGE: test1.sh [Nonnegative integer n]"
+  echo "out put [n!]"
 }
 
-factorial $1
+
+
+parameter=$1
+if [ -z $parameter ]
+then
+  usage
+elif test $parameter -gt 0
+  then
+  factorial $1
+else
+  echo "请输入非负整数!"
+fi
+
