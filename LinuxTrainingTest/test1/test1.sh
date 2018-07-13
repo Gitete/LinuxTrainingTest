@@ -28,8 +28,8 @@ factorial()
 #USAGE
 usage()
 {
-    echo "USAGE: test1.sh [Nonnegative integer n]"
-    echo "out put [n!]"
+    echo "USAGE: test1.sh [Nonnegative_integer_n]"
+    echo "out put n's factorial"
 }
 
 
